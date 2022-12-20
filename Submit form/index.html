@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Javascript submit form</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="ui/css/main.css">
+    <link rel="stylesheet" href="dialog/main.css">
+
+    <script src="js/core.js" defer></script>
+    <script src="js/init.js" defer></script>
+    <script src="dialog/main.js" defer></script>
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <h1>Sign Up</h1>
+
+        <form id="signupForm">
+            <div class="flex-container">
+                <div class="form-group flex-child">
+                    <input type="text" id="nameInput" onkeydown="return /\p{L}/u.test(event.key)" onChange="inputChanged(this);" />
+                    <label for="nameInput" animated>First name</label>
+                    <div id="nameWarning" class="input-warning"></div>
+                </div>
+        
+                <div class="form-group flex-child">
+                    <input type="text" id="lnameInput" onkeydown="return /\p{L}/u.test(event.key)" onChange="inputChanged(this);" />
+                    <label for="lnameInput" animated>Last name</label>
+                    <div id="lnameWarning" class="input-warning"></div>
+                </div>
+            </div>
+        
+            <div class="form-group">  
+                <input type="text" id="addressInput" maxlength="35" onChange="inputChanged(this);" />
+                <label for="addressInput" animated>Address</label>
+                <div id="addressWarning" class="input-warning"></div>
+            </div>
+        
+            <div class="form-group">            
+                <label>Date of Birth</label>
+                <input type="date" id="birthdayInput" onChange="inputChanged(this);"/>
+            </div>
+
+            <div class="form-group">
+                <label>Gender</label>              
+                <select name="Gender" id="genderInput">
+                    <option selected disabled>Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Male">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label static>Notes</label>
+                <textarea  name="textarea" id="textareaInput" rows="10" cols="50" placeholder="Write your motivation letter..."></textarea>
+            </div>
+
+            <button type="submit" style="margin-left: 10px;" class="btn btn-primary">Add</button>
+        </form>
+    </div>
+
+    <div class="content-wrapper">
+        <h1>Users</h1>
+
+        <div class="table-responsive users" style="margin-top: 20px;">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Address</th>
+                        <th>Birthday</th>
+                        <th>Gender</th>
+                        <th>Delete</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

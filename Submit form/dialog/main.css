@@ -1,0 +1,136 @@
+.dialog-container {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: +1;
+}
+
+.dialog-padding {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+    min-width: 280px;
+    max-height: calc(100% - 20px);
+    padding: 10px;
+}
+
+@media only screen and (min-width: 740px) {
+    .dialog-container .dialog-padding {
+        min-width: 320px;
+    }
+}
+
+.dialog {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 100%;
+    min-height: 200px;
+
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+}
+
+.dialog-content {
+    flex-grow: 1;
+    font-size: 15px;
+    padding-left: 14px;
+    padding-right: 14px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    word-break: break-all;
+}
+
+.dialog-content:empty {
+    background-image: url(images/preloader.svg?2);
+    background-size: 44px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.dialog-header:empty {
+    padding-top: 14px;
+}
+
+.dialog-title {
+    text-align: center;
+    font-size: 18px;
+    height: 50px;
+    line-height: 50px;
+    width: calc(100% - 120px);
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dialog-footer {
+    display: flex;
+    padding: 14px;
+}
+
+.dialog-footer:empty {
+    padding: 0px;
+    padding-bottom: 14px;
+}
+
+.dialog-button {
+    display: inline-block;
+    width: 100%;
+    padding: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border: none;
+    font-size: 17px;
+    background-color: #2b2b2b;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+}
+
+.dialog-button:hover {
+    opacity: 0.8;
+}
+
+.dialog-button:nth-child(2) {
+    margin-left: 5px;
+}
+
+.dialog-close {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 52px;
+    height: 52px;
+    background-image: url(images/icon-remove.svg?2);
+    background-size: 24px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.dialog-close:hover {
+    opacity: 0.6;
+}
+
+.dialog-icon {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 52px;
+    height: 52px;
+    background-size: 24px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
